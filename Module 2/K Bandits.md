@@ -14,7 +14,7 @@ mjx-container {
 </style>
 -->
 
-# Vấn đề K-Armed Bandit
+# Bài toán K-Armed Bandit
 
 ## Giới thiệu
 K-armed bandit là một bài toán cổ điển trong học máy và lý thuyết ra quyết định, mô phỏng tình huống người chơi phải đưa ra lựa chọn giữa nhiều phương án khác nhau để tối đa hóa phần thưởng nhận được.
