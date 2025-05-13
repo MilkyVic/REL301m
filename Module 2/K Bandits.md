@@ -1,3 +1,19 @@
+<!--
+layout: default
+title: K-Armed Bandit
+---
+
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+mjx-container {
+  font-size: 10000% !important;
+}
+</style>
+-->
+
 # Vấn đề K-Armed Bandit
 
 ## Giới thiệu
@@ -13,7 +29,10 @@ Hãy tưởng tượng bạn là một bác sĩ muốn áp dụng 3 kiểu đi�
 ## Action Values
 1. **Values (giá trị)**
   - Values ở đây là phần thưởng được dự kiến 
-  - Công thức: $$ q_{*}(a) = \mathbb{E}[R_t|A_t = a] \quad \forall a \in \{1,\ldots,k\} $$
+  - Công thức: 
+$$
+q_*(a) \overset{\text{.}}{=} \mathbb{E}[R_t \mid A_t = a], \quad \forall a \in \{1, \ldots, k}\
+$$
   - Trong đó:
     + $q_{*}(a)$: giá trị thực của hành động a
     + $R_t$: phần thưởng tại thời điểm t
@@ -34,3 +53,8 @@ Hãy tưởng tượng bạn là một bác sĩ muốn áp dụng 3 kiểu đi�
 
 ## Vì sao nên tìm hiểu K bandits trước khi học reinforcement learning ? 
 K-armed bandit là một mô hình quan trọng trong việc học cách ra quyết định dưới điều kiện không chắc chắn. Nó là nền tảng cho nhiều thuật toán machine learning và real-life application.
+-------------------------------------------------------------------------------------------------------
+  ##### 5-12-2025 at 5PM.
+  ##### Course: Fundamentals of Reinforcement Learning/Module 2.
+  ##### Đọc tài liệu tại: K-Armed Bandit problem.
+  ##### Học nội dung từ clip: K-Armed Bandit problem/Sequential Decision Making with Evaluative Feedback.
