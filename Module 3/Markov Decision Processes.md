@@ -131,7 +131,7 @@ MDPs cung cấp một khuôn khổ mạnh mẽ để:
 - Xử lý sự không chắc chắn trong môi trường
 
 -------------------------------------------------------------------------------------------------------
-##### 5-14-2025 at 7PM.
+##### 5-14-2025 at 11PM.
 ##### Course: Fundamentals of Reinforcement Learning/Module 3.
 ##### Đọc tài liệu tại: Markov Decision Processes
 ##### Học nội dung từ clip: Introduction to Markov Decision Processes
