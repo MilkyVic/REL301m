@@ -5,7 +5,7 @@
 ###  Example 4.1:
 - Lưới 4×4, đánh số từ 1 đến 14.
 - Các trạng thái đích ở góc là tường (không thể vào).
-- Mỗi hành động đều dẫn đến phần thưởng \( R_t = -1 \).
+- Mỗi hành động đều dẫn đến phần thưởng $$ R_t = -1 $$.
 - Chính sách: **chọn đều 4 hành động (trái, phải, lên, xuống)**.
 
 ### Exercise 4.2:
@@ -26,7 +26,7 @@ giá trị trạng thái của state 15 theo công thức Bellman:
 
 $$v_\pi(15) = \sum_a \pi(a|15) \sum_{s',r} p(s', r | 15, a) [r + \gamma v_\pi(s')]$$
 
-- Với mỗi hành động có xác suất \( \frac{1}{4} \), \( \gamma = 1 \), \( r = -1 \):
+- Với mỗi hành động có xác suất $$ \frac{1}{4} $$, $$ \gamma = 1 $$, $$ r = -1 $$:
 
 $$v_\pi(15) = \frac{1}{4} \sum_{s'} [-1 + v_\pi(s')]$$
 
@@ -45,9 +45,9 @@ $$\Rightarrow \frac{3}{4}v_\pi(15) = \frac{1}{4} [ -4 + v_\pi(12) + v_\pi(13) + 
 $$\Rightarrow v_\pi(15) = \frac{-4 + v_\pi(12) + v_\pi(13) + v_\pi(14)}{3}$$
 
 Giá trị từ sách:
-- \( v_\pi(12) = -22 \)
-- \( v_\pi(13) = -20 \)
-- \( v_\pi(14) = -14 \)
+- $$ v_\pi(12) = -22 $$
+- $$ v_\pi(13) = -20 $$
+- $$ v_\pi(14) = -14 $$
 
 $$v_\pi(15) = \frac{-4 -22 -20 -14}{3} = \frac{-60}{3} = -20$$
 
@@ -62,11 +62,11 @@ $$v_\pi(13) = \frac{1}{4} [ -1 + v_\pi(12) + (-1 + v_\pi(14)) + (-1 + v_\pi(9)) 
 $$v_\pi(13) = \frac{-4 + v_\pi(12) + v_\pi(14) + v_\pi(9) + v_\pi(15)}{4}$$
 
 Giá trị:
-- \( v_\pi(12) = -22 \)
-- \( v_\pi(14) = -14 \)
-- \( v_\pi(9) = -18 \)
+- $$ v_\pi(12) = -22 $$
+- $$ v_\pi(14) = -14 $$
+- $$ v_\pi(9) = -18 $$
 
-Gọi \( x = v_\pi(15) \):
+Gọi $$ x = v_\pi(15) $$:
 
 $$v_\pi(13) = \frac{-58 + x}{4}$$
 
@@ -86,7 +86,7 @@ $$\Rightarrow x = \frac{-40 + \frac{-58 + x}{4}}{3}
 ## Conclusion:
 
 - **1 (không thay đổi dynamics)**:  
-   \( v_\pi(15) = -20 \)
+   $$ v_\pi(15) = -20 $$
 
 - **2 (13 đi xuống 15)**:  
-  👉 \( v_\pi(15) \approx -19.82 \)
+  👉 $$ v_\pi(15) \approx -19.82 $$
