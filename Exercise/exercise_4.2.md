@@ -1,4 +1,3 @@
-
 # Exercise 4.2 – Gridworld (Sutton & Barto)
 
 ## Summary
@@ -25,15 +24,11 @@
 
 giá trị trạng thái của state 15 theo công thức Bellman:
 
-\[
-v_\pi(15) = \sum_a \pi(a|15) \sum_{s',r} p(s', r | 15, a) [r + \gamma v_\pi(s')]
-\]
+$$v_\pi(15) = \sum_a \pi(a|15) \sum_{s',r} p(s', r | 15, a) [r + \gamma v_\pi(s')]$$
 
 - Với mỗi hành động có xác suất \( \frac{1}{4} \), \( \gamma = 1 \), \( r = -1 \):
 
-\[
-v_\pi(15) = \frac{1}{4} \sum_{s'} [-1 + v_\pi(s')]
-\]
+$$v_\pi(15) = \frac{1}{4} \sum_{s'} [-1 + v_\pi(s')]$$
 
 Các trạng thái đích từ state 15:
 - left → 12
@@ -41,30 +36,20 @@ Các trạng thái đích từ state 15:
 - right → 14
 - down → 15 (self)
 
-\[
-v_\pi(15) = \frac{1}{4} [ -1 + v_\pi(12) + (-1 + v_\pi(13)) + (-1 + v_\pi(14)) + (-1 + v_\pi(15)) ]
-\]
+$$v_\pi(15) = \frac{1}{4} [ -1 + v_\pi(12) + (-1 + v_\pi(13)) + (-1 + v_\pi(14)) + (-1 + v_\pi(15)) ]$$
 
-\[
-v_\pi(15) = \frac{1}{4} [ -4 + v_\pi(12) + v_\pi(13) + v_\pi(14) + v_\pi(15) ]
-\]
+$$v_\pi(15) = \frac{1}{4} [ -4 + v_\pi(12) + v_\pi(13) + v_\pi(14) + v_\pi(15) ]$$
 
-\[
-\Rightarrow \frac{3}{4}v_\pi(15) = \frac{1}{4} [ -4 + v_\pi(12) + v_\pi(13) + v_\pi(14) ]
-\]
+$$\Rightarrow \frac{3}{4}v_\pi(15) = \frac{1}{4} [ -4 + v_\pi(12) + v_\pi(13) + v_\pi(14) ]$$
 
-\[
-\Rightarrow v_\pi(15) = \frac{-4 + v_\pi(12) + v_\pi(13) + v_\pi(14)}{3}
-\]
+$$\Rightarrow v_\pi(15) = \frac{-4 + v_\pi(12) + v_\pi(13) + v_\pi(14)}{3}$$
 
 Giá trị từ sách:
 - \( v_\pi(12) = -22 \)
 - \( v_\pi(13) = -20 \)
 - \( v_\pi(14) = -14 \)
 
-\[
-v_\pi(15) = \frac{-4 -22 -20 -14}{3} = \frac{-60}{3} = -20
-\]
+$$v_\pi(15) = \frac{-4 -22 -20 -14}{3} = \frac{-60}{3} = -20$$
 
 ---
 
@@ -72,13 +57,9 @@ v_\pi(15) = \frac{-4 -22 -20 -14}{3} = \frac{-60}{3} = -20
 
 Giờ đây, hành động `down` từ state 13 dẫn đến state 15.
 
-\[
-v_\pi(13) = \frac{1}{4} [ -1 + v_\pi(12) + (-1 + v_\pi(14)) + (-1 + v_\pi(9)) + (-1 + v_\pi(15)) ]
-\]
+$$v_\pi(13) = \frac{1}{4} [ -1 + v_\pi(12) + (-1 + v_\pi(14)) + (-1 + v_\pi(9)) + (-1 + v_\pi(15)) ]$$
 
-\[
-v_\pi(13) = \frac{-4 + v_\pi(12) + v_\pi(14) + v_\pi(9) + v_\pi(15)}{4}
-\]
+$$v_\pi(13) = \frac{-4 + v_\pi(12) + v_\pi(14) + v_\pi(9) + v_\pi(15)}{4}$$
 
 Giá trị:
 - \( v_\pi(12) = -22 \)
@@ -87,24 +68,18 @@ Giá trị:
 
 Gọi \( x = v_\pi(15) \):
 
-\[
-v_\pi(13) = \frac{-58 + x}{4}
-\]
+$$v_\pi(13) = \frac{-58 + x}{4}$$
 
 Kết hợp lại công thức phần 1:
 
-\[
-v_\pi(15) = \frac{-4 + v_\pi(12) + v_\pi(13) + v_\pi(14)}{3}
-= \frac{-40 + v_\pi(13)}{3}
-\]
+$$v_\pi(15) = \frac{-4 + v_\pi(12) + v_\pi(13) + v_\pi(14)}{3}
+= \frac{-40 + v_\pi(13)}{3}$$
 
-\[
-\Rightarrow x = \frac{-40 + \frac{-58 + x}{4}}{3}
+$$\Rightarrow x = \frac{-40 + \frac{-58 + x}{4}}{3}
 = \frac{-218 + x}{12}
 \Rightarrow 12x = -218 + x
 \Rightarrow 11x = -218
-\Rightarrow x = -19.82
-\]
+\Rightarrow x = -19.82$$
 
 ---
 
