@@ -29,10 +29,7 @@ Giải thích:
 
 ### Phương pháp lặp (Iterative Policy Evaluation):
 
-$$
-v_{k+1}(s) = \sum_a \pi(a|s) \sum_{s',r} p(s', r \mid s, a) [r + \gamma v_k(s')]
-\tag{4.5}
-$$
+$$ v_{k+1}(s) = \sum_a \pi(a|s) \sum_{s',r} p(s', r \mid s, a) [r + \gamma v_k(s')] \tag{4.5} $$
 
 - Bắt đầu với $ v_0(s) $ bất kỳ, lặp lại công thức này để hội tụ về $ v_\pi(s) $
 
@@ -45,18 +42,13 @@ Tìm chính sách tốt hơn bằng cách tận dụng $ v_\pi $ để chọn h�
 
 ### Hàm hành động (Action-Value Function):
 
-$$q_\pi(s, a) = \mathbb{E}\pi [\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \mid S_t = s, A_t = a] = \sum_{s', r} p(s', r \mid s, a) [r + \gamma v_\pi(s')]
-\tag{4.6}
-$$
+$$q_\pi(s, a) = \mathbb{E}\pi [\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \mid S_t = s, A_t = a] = \sum_{s', r} p(s', r \mid s, a) [r + \gamma v_\pi(s')] \tag{4.6} $$
 
 - Cho biết giá trị kỳ vọng nếu chọn hành động $ a $ tại trạng thái $ s $ và sau đó tuân theo chính sách $ \pi $
 
 ### Chính sách tham lam (Greedy policy):
 
-$$
-\pi'(s) = \arg\max_a q_\pi(s, a)
-\tag{4.9}
-$$
+$$\pi'(s) = \arg\max_a q_\pi(s, a) \tag{4.9} $$
 
 - Tại mỗi trạng thái, chọn hành động có $ q $ lớn nhất → dẫn đến chính sách mới tốt hơn hoặc bằng chính sách cũ.
 
@@ -85,10 +77,7 @@ $$
 ### Mô tả:
 - Kết hợp luôn bước cải tiến chính sách vào bước đánh giá, thực hiện cập nhật trực tiếp như sau:
 
-$$
-v_{k+1}(s) = \max_a \sum_{s', r} p(s', r \mid s, a) [r + \gamma v_k(s')]
-\tag{4.10}
-$$
+$$v_{k+1}(s) = \max_a \sum_{s', r} p(s', r \mid s, a) [r + \gamma v_k(s')] \tag{4.10} $$
 
 - Không cần đánh giá đầy đủ mỗi chính sách → nhanh hơn nhưng vẫn hội tụ về $ v^* $
 
@@ -102,9 +91,7 @@ $$
 
 ### Ví dụ cập nhật tại một trạng thái:
 
-$$
-v(s_k) \leftarrow \max_a \sum_{s', r} p(s', r \mid s_k, a) [r + \gamma v(s')]
-$$
+$$v(s_k) \leftarrow \max_a \sum_{s', r} p(s', r \mid s_k, a) [r + \gamma v(s')] $$
 
 - Miễn là mỗi trạng thái được cập nhật đủ số lần → vẫn hội tụ.
 
