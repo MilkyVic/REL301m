@@ -133,10 +133,10 @@ $$
 
 | Loại giá trị         | Công thức                                                                 |
 |----------------------|---------------------------------------------------------------------------|
-| $ v_\pi(s) $    | $ \sum_a \pi(a|s) \sum_{s',r} p(s',r|s,a)[r + \gamma v_\pi(s')] $ |
-| $ q_\pi(s,a) $  | $ \sum_{s',r} p(s',r|s,a)[r + \gamma v_\pi(s')] $                   |
-| $ v^*(s) $       | $ \max_a \sum_{s',r} p(s',r|s,a)[r + \gamma v^*(s')] $              |
-| $ q^*(s,a) $     | $ \sum_{s',r} p(s',r|s,a)[r + \gamma \max_{a'} q^*(s',a')] $        |
+| $ v_\pi(s) $    | $$ \sum_a \pi(a|s) \sum_{s',r} p(s',r|s,a)[r + \gamma v_\pi(s')] $$ |
+| $ q_\pi(s,a) $  | $$ \sum_{s',r} p(s',r|s,a)[r + \gamma v_\pi(s')] $$                   |
+| $ v^*(s) $       | $$ \max_a \sum_{s',r} p(s',r|s,a)[r + \gamma v^*(s')] $$              |
+| $ q^*(s,a) $     | $$ \sum_{s',r} p(s',r|s,a)[r + \gamma \max_{a'} q^*(s',a')] $$        |
 
 ---
 
