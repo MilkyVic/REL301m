@@ -29,10 +29,8 @@ Giải thích:
 
 ### Phương pháp lặp (Iterative Policy Evaluation):
 
-$$
-v_{k+1}(s) = \sum_a \pi(a \mid s) \sum_{s', r} p(s', r \mid s, a) \left[ r + \gamma v_k(s') \right]
-\tag{4.5}
-$$
+$$v_{k+1}(s) = \sum_a \pi(a \mid s) \sum_{s', r} p(s', r \mid s, a) \left[ r + \gamma v_k(s') \right]
+\tag{4.5}$$
 
 - Bắt đầu với $ v_0(s) $ bất kỳ, lặp lại công thức này để hội tụ về $ v_\pi(s) $
 
