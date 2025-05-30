@@ -48,8 +48,7 @@ Tìm chính sách tốt hơn bằng cách tận dụng $ v_\pi $ để chọn h�
 
 ### Hàm hành động (Action-Value Function):
 
-$$
-q_\pi(s, a) = \sum_{s', r} p(s', r \mid s, a) [r + \gamma v_\pi(s')]
+$$q_\pi(s, a) = \mathbb{E}\pi [\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \mid S_t = s, A_t = a] = \sum_{s', r} p(s', r \mid s, a) [r + \gamma v_\pi(s')]
 \tag{4.6}
 $$
 
