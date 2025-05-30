@@ -12,9 +12,7 @@ Tính toán giá trị kỳ vọng (expected return) của từng trạng thái 
 
 ### Công thức kỳ vọng:
 
-```math
-v_\pi(s) = \mathbb{E}_\pi [ G_t \mid S_t = s ] = \mathbb{E}_\pi [ R_{t+1} + \gamma v_\pi(S_{t+1}) \mid S_t = s ]
-```
+$$ v_\pi(s) = \mathbb{E}\pi [ G_t \mid S_t = s ] = \mathbb{E}\pi [ R_{t+1} + \gamma v_\pi(S_{t+1}) \mid S_t = s ] $$
 
 - $ G_t $: tổng phần thưởng về sau (return)
 - $ \gamma $: hệ số chiết khấu
@@ -22,10 +20,10 @@ v_\pi(s) = \mathbb{E}_\pi [ G_t \mid S_t = s ] = \mathbb{E}_\pi [ R_{t+1} + \gam
 
 ### Dạng tổng quát (Bellman Equation):
 
-```math
+$$
 v_\pi(s) = \sum_a \pi(a|s) \sum_{s',r} p(s', r \mid s, a) [r + \gamma v_\pi(s')]
 \tag{4.4}
-```
+$$
 
 Giải thích:
 - $ \pi(a|s) $: xác suất chọn hành động $ a $ ở trạng thái $ s $
@@ -34,10 +32,10 @@ Giải thích:
 
 ### Phương pháp lặp (Iterative Policy Evaluation):
 
-```math
+$$
 v_{k+1}(s) = \sum_a \pi(a|s) \sum_{s',r} p(s', r \mid s, a) [r + \gamma v_k(s')]
 \tag{4.5}
-```
+$$
 
 - Bắt đầu với $ v_0(s) $ bất kỳ, lặp lại công thức này để hội tụ về $ v_\pi(s) $
 
@@ -50,19 +48,18 @@ Tìm chính sách tốt hơn bằng cách tận dụng $ v_\pi $ để chọn h�
 
 ### Hàm hành động (Action-Value Function):
 
-```math
-q_\pi(s, a) = \mathbb{E}\pi [\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \mid S_t = s, A_t = a] = \sum_{s', r} p(s', r \mid s, a) [r + \gamma v_\pi(s')]
+$$q_\pi(s, a) = \mathbb{E}\pi [\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \mid S_t = s, A_t = a] = \sum_{s', r} p(s', r \mid s, a) [r + \gamma v_\pi(s')]
 \tag{4.6}
-```
+$$
 
 - Cho biết giá trị kỳ vọng nếu chọn hành động $ a $ tại trạng thái $ s $ và sau đó tuân theo chính sách $ \pi $
 
 ### Chính sách tham lam (Greedy policy):
 
-```math
+$$
 \pi'(s) = \arg\max_a q_\pi(s, a)
 \tag{4.9}
-```
+$$
 
 - Tại mỗi trạng thái, chọn hành động có $ q $ lớn nhất → dẫn đến chính sách mới tốt hơn hoặc bằng chính sách cũ.
 
@@ -78,9 +75,9 @@ q_\pi(s, a) = \mathbb{E}\pi [\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \mid S_t = s
 
 ### Cập nhật chính sách:
 
-```math
+$$
 \pi(s) = \arg\max_a \sum_{s'} P(s'\mid s, a) [R(s,a,s') + \gamma V(s')]
-```
+$$
 
 - Dừng khi $ \pi $ không thay đổi nữa ⇒ chính sách tối ưu $ \pi^* $
 
@@ -91,10 +88,10 @@ q_\pi(s, a) = \mathbb{E}\pi [\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \mid S_t = s
 ### Mô tả:
 - Kết hợp luôn bước cải tiến chính sách vào bước đánh giá, thực hiện cập nhật trực tiếp như sau:
 
-```math
+$$
 v_{k+1}(s) = \max_a \sum_{s', r} p(s', r \mid s, a) [r + \gamma v_k(s')]
 \tag{4.10}
-```
+$$
 
 - Không cần đánh giá đầy đủ mỗi chính sách → nhanh hơn nhưng vẫn hội tụ về $ v^* $
 
@@ -108,9 +105,9 @@ v_{k+1}(s) = \max_a \sum_{s', r} p(s', r \mid s, a) [r + \gamma v_k(s')]
 
 ### Ví dụ cập nhật tại một trạng thái:
 
-```math
+$$
 v(s_k) \leftarrow \max_a \sum_{s', r} p(s', r \mid s_k, a) [r + \gamma v(s')]
-```
+$$
 
 - Miễn là mỗi trạng thái được cập nhật đủ số lần → vẫn hội tụ.
 
@@ -124,9 +121,9 @@ Hai quá trình song song:
 - **Đánh giá chính sách**: $ v \leftarrow v_\pi $
 
 ### Khi hội tụ:
-```math
+$$
 \pi = \pi^*, \quad v = v^*
-```
+$$
 
 - Đây là cơ sở của phần lớn thuật toán RL hiện đại.
 
@@ -136,26 +133,10 @@ Hai quá trình song song:
 
 | Loại giá trị         | Công thức                                                                 |
 |----------------------|---------------------------------------------------------------------------|
-| ```math
-v_\pi(s)
-```    | ```math
-\sum_a \pi(a|s) \sum_{s',r} p(s',r|s,a)[r + \gamma v_\pi(s')]
-``` |
-| ```math
-q_\pi(s,a)
-```  | ```math
-\sum_{s',r} p(s',r|s,a)[r + \gamma v_\pi(s')]
-```                   |
-| ```math
-v^*(s)
-```       | ```math
-\max_a \sum_{s',r} p(s',r|s,a)[r + \gamma v^*(s')]
-```              |
-| ```math
-q^*(s,a)
-```     | ```math
-\sum_{s',r} p(s',r|s,a)[r + \gamma \max_{a'} q^*(s',a')]
-```        |
+| $ v_\pi(s) $    | $ \sum_a \pi(a|s) \sum_{s',r} p(s',r|s,a)[r + \gamma v_\pi(s')] $ |
+| $ q_\pi(s,a) $  | $ \sum_{s',r} p(s',r|s,a)[r + \gamma v_\pi(s')] $                   |
+| $ v^*(s) $       | $ \max_a \sum_{s',r} p(s',r|s,a)[r + \gamma v^*(s')] $              |
+| $ q^*(s,a) $     | $ \sum_{s',r} p(s',r|s,a)[r + \gamma \max_{a'} q^*(s',a')] $        |
 
 ---
 
