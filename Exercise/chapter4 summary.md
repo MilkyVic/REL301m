@@ -20,10 +20,7 @@ $$ v_\pi(s) = \mathbb{E}\pi [ G_t \mid S_t = s ] = \mathbb{E}\pi [ R_{t+1} + \ga
 
 ### Dạng tổng quát (Bellman Equation):
 
-$$
-v_\pi(s) = \sum_a \pi(a|s) \sum_{s',r} p(s', r \mid s, a) [r + \gamma v_\pi(s')]
-\tag{4.4}
-$$
+$$ v_\pi(s) = \sum_a \pi(a|s) \sum_{s',r} p(s', r \mid s, a) [r + \gamma v_\pi(s')] $$
 
 Giải thích:
 - $ \pi(a|s) $: xác suất chọn hành động $ a $ ở trạng thái $ s $
