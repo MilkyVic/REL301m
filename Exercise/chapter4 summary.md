@@ -142,21 +142,29 @@ $$
 
 ## Chi tiết công thức Bellman:
 
-**Hàm giá trị trạng thái ($ v_\pi(s) $):**
+Hàm giá trị trạng thái ($ v_\pi(s) $):
 
-$$ v_\pi(s) = \sum_a \pi(a|s) \sum_{s',r} p(s',r|s,a)[r + \gamma v_\pi(s')] $$
+```math
+v_\pi(s) = \sum_a \pi(a|s) \sum_{s',r} p(s',r|s,a)[r + \gamma v_\pi(s')]
+```
 
-**Hàm giá trị hành động ($ q_\pi(s,a) $):**
+Hàm giá trị hành động ($ q_\pi(s,a) $):
 
-$$ q_\pi(s,a) = \sum_{s',r} p(s',r|s,a)[r + \gamma v_\pi(s')] $$
+```math
+q_\pi(s,a) = \sum_{s',r} p(s',r|s,a)[r + \gamma v_\pi(s')]
+```
 
-**Hàm giá trị tối ưu ($ v^*(s) $):**
+Hàm giá trị tối ưu ($ v^*(s) $):
 
-$$ v^*(s) = \max_a \sum_{s',r} p(s',r|s,a)[r + \gamma v^*(s')] $$
+```math
+v^*(s) = \max_a \sum_{s',r} p(s',r|s,a)[r + \gamma v^*(s')]
+```
 
-**Hàm giá trị hành động tối ưu ($ q^*(s,a) $):**
+Hàm giá trị hành động tối ưu ($ q^*(s,a) $):
 
-$$ q^*(s,a) = \sum_{s',r} p(s',r|s,a)[r + \gamma \max_{a'} q^*(s',a')] $$
+```math
+q^*(s,a) = \sum_{s',r} p(s',r|s,a)[r + \gamma \max_{a'} q^*(s',a')]
+```
 
 ---
 
