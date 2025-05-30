@@ -1,6 +1,6 @@
-# 📘 Chương 4: Dynamic Programming (Sutton & Barto, 2020)
+# Chương 4: Dynamic Programming (Sutton & Barto, 2020)
 
-## ✅ Mục tiêu chính
+##  Main point
 Dynamic Programming (DP) là tập hợp các thuật toán giúp giải bài toán tối ưu chính sách trong MDP (Markov Decision Process) khi **biết rõ mô hình môi trường**. DP là cơ sở lý thuyết cho nhiều phương pháp học tăng cường hiện đại.
 
 ---
@@ -12,9 +12,7 @@ Tính toán giá trị kỳ vọng (expected return) của từng trạng thái 
 
 ### Công thức kỳ vọng:
 
-$$
-v_\pi(s) = \mathbb{E}_\pi [ G_t \mid S_t = s ] = \mathbb{E}_\pi [ R_{t+1} + \gamma v_\pi(S_{t+1}) \mid S_t = s ]
-$$
+$$ v_\pi(s) = \mathbb{E}\pi [ G_t \mid S_t = s ] = \mathbb{E}\pi [ R_{t+1} + \gamma v_\pi(S_{t+1}) \mid S_t = s ] $$
 
 - $ G_t $: tổng phần thưởng về sau (return)
 - $ \gamma $: hệ số chiết khấu
@@ -143,7 +141,7 @@ $$
 
 ---
 
-## ✅ Kết luận
+## Kết luận
 
 - DP yêu cầu mô hình môi trường chính xác.
 - Gồm các thuật toán: Policy Evaluation, Policy Iteration, Value Iteration, GPI.
