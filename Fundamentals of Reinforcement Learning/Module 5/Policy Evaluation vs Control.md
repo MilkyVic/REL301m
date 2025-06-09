@@ -8,7 +8,7 @@
 ### 2.1. Định Nghĩa
 - Nhiệm vụ xác định hàm giá trị cho một chính sách cụ thể (π)
 - Đánh giá mức độ hiệu quả của chính sách đó
-- Tính toán phần thưởng kỳ vọng từ mỗi trạng thái
+- Tính toán phần thưởng kỳ vọng từ mỗi trạng thái.
 
 ### 2.2. Mục Tiêu
 - Tính toán hàm giá trị trạng thái vπ
