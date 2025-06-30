@@ -1,0 +1,17 @@
+# Tic Tac Toe Game Requirements
+# Các thư viện cần thiết cho trò chơi
+
+# Tkinter thường đã có sẵn trong Python, nhưng nếu cần cài đặt:
+# tkinter
+
+# Các thư viện chuẩn Python (không cần cài đặt thêm):
+# json - xử lý file JSON
+# os - thao tác với hệ thống file
+# datetime - xử lý thời gian
+
+# Lưu ý: Tkinter thường được tích hợp sẵn trong Python
+# Nếu gặp lỗi "No module named 'tkinter'", hãy cài đặt:
+# Ubuntu/Debian: sudo apt-get install python3-tk
+# CentOS/RHEL: sudo yum install tkinter
+# Windows: Thường đã có sẵn
+# macOS: Thường đã có sẵn 
